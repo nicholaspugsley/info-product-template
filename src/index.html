@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Product Name] - Best Performing</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <main class="p-4 mx-auto max-w-6xl">
+      <header id="top" class="flex items-center p-4 bg-gray-100">
+        <img
+          src="path/to/your-logo.png"
+          alt="Script Swipes Logo"
+          class="mr-4"
+          style="width: 120px; height: auto"
+        />
+      </header>
+
+      <section class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2 flex flex-col items-center text-center">
+            <h1 class="text-center text-3xl font-bold mt-8 mb-8">
+              Sign Your Next Client With These Proven Cold
+            </h1>
+            <video controls class="w-full">
+              <source src="path/to/your-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-4">Order Now And You'll Receive:</p>
+            <ul class="text-left">
+              <li>
+                5 Step "Plug and Play" Outreach Templates So You Can Sign Your
+                Next Client Guaranteed (Or Your Money Back)
+              </li>
+              <li>
+                A/B Tests Written By Our Experts So You Can Improve Response
+                Rates from Prospects
+              </li>
+              <li>
+                Personalized Openers That Make Every Message Look Individually
+                Personalized
+              </li>
+              <li>
+                Cold Email Tech Stack Guide So You Can Send Thousands of Cold
+                Emails Automatically Every Month (Without Breaking the Law or
+                Spamming)
+              </li>
+              <li>
+                Direct Access to Our Team So We Can Give You Feedback on Your
+                Scripts & Responses
+              </li>
+              <li>
+                BONUS 1: 7 Figure Rev Ops Course: How to Create Offers That 100%
+                Cold Prospects Actually Buy & Pay High Ticket Prices For
+                (Previously Only Available in Our $10k Coaching Program)
+              </li>
+            </ul>
+            <p class="font-bold mt-4 text-4xl text-green-500">Only $20</p>
+            <p class="mt-4 text-1xl">One time payment</p>
+          </div>
+
+          <div class="md:w-1/2 flex flex-col items-center">
+            <img
+              src="path/to/your-gold-medal-image.png"
+              alt="90 Day Money Back Guarantee"
+              class="w-1/2 mx-auto"
+            />
+            <p class="mt-4">
+              You can order multiple scripts at the same time, check the ones
+              you want so you can have a selection of scripts to pick from.
+            </p>
+            <!-- Form inputs and submit button here -->
+            <form
+              id="checkout-form"
+              class="mt-4 w-full max-w-xs bg-white p-5 border border-slate-300 rounded-lg"
+              action="/charge"
+              method="post"
+            >
+              <!-- Contact Information -->
+              <div id="step1">
+                <!-- Mandatory Field Notice -->
+                <p class="text-blue-500 text-xs font-bold mt-4 mb-4">
+                  * Denotes Mandatory
+                </p>
+
+                <!-- Full Name Field -->
+                <div class="mb-4">
+                  <label
+                    for="full-name"
+                    class="block text-sm font-medium text-gray-700"
+                    >Full Name *</label
+                  >
+                  <input
+                    type="text"
+                    id="full-name"
+                    name="full_name"
+                    required
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                  />
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-4">
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700"
+                    >Email *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                  />
+                </div>
+
+                <!-- Phone Number Field -->
+                <div class="mb-4">
+                  <label
+                    for="phone"
+                    class="block text-sm font-medium text-gray-700"
+                    >Phone Number *</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                  />
+                </div>
+
+                <!-- Product Selection Checkboxes -->
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Choose Your Script Packs *</label
+                  >
+                  <div class="mt-2">
+                    <!-- Checkbox for Product 1 -->
+                    <label class="inline-flex items-center">
+                      <input
+                        type="checkbox"
+                        name="product"
+                        value="product1"
+                        class="form-checkbox"
+                      />
+                      <span class="ml-2">Product 1 ($10)</span>
+                    </label>
+                    <!-- Repeat for other products -->
+                  </div>
+                </div>
+
+                <!-- Agreement Notice and Continue Button -->
+                <button
+                  id="continue-button"
+                  type="button"
+                  onclick="goToStep(2)"
+                  class="bg-blue-500 py-2 px-4 rounded-md hover:bg-blue-700 transition-colors w-full"
+                >
+                  <p class="text-white font-bold">Continue to Payment</p>
+                </button>
+                <p class="text-white text-sm text-center">
+                  By submitting the form you agree to receive emails and texts
+                  about this offer, you can unsubscribe at any time.
+                </p>
+                <p class="text-xs text-center mt-2">
+                  We Respect Your Privacy & Information
+                </p>
+              </div>
+
+              <!-- Step 2: Payment Information -->
+              <div id="step2" class="hidden">
+                <div id="card-element" class="mb-4">
+                  <!-- Stripe Elements will go here -->
+                </div>
+
+                <!-- Submit Button for Payment -->
+                <button
+                  type="submit"
+                  class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors w-full"
+                >
+                  Pay Now
+                </button>
+              </div>
+            </form>
+
+            <!-- Client Success Photos -->
+            <!-- Add your images here -->
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container mx-auto px-4 py-8">
+          <div class="text-center">
+            <!-- Section Title -->
+            <h2 class="text-3xl font-bold mb-6">
+              Launch Your Lead Generation Machine and Get Your Next Client in 7
+              Days - For $20
+            </h2>
+
+            <!-- Introductory Questions -->
+            <p class="mb-4">
+              What’s the difference between a freelancer and an agency owner?
+            </p>
+            <p class="mb-6">
+              What's the difference between hoping & begging for business and
+              being someone who’s able to predictably get high-paying clients?
+            </p>
+
+            <!-- Imaginative Scenario -->
+            <div class="mb-8 text-left mx-auto" style="max-width: 640px">
+              <p>Imagine this situation:</p>
+              <ul class="list-disc list-inside">
+                <li>You don’t ever wonder where your next client is.</li>
+                <li>
+                  In fact, you know exactly where they are — They’re 100
+                  messages away.
+                </li>
+                <li>
+                  The difference between those who stay a freelancer and those
+                  who build a real business…
+                </li>
+                <li>
+                  The difference between staying at a 9-5 job and working for
+                  yourself…
+                </li>
+                <li>
+                  The difference between being truly free and being shackled to
+                  the hamster wheel of wondering if you’ll even make it next
+                  month…
+                </li>
+                <li>Is your Client Acquisition System.</li>
+              </ul>
+            </div>
+
+            <!-- Numbers Section -->
+            <div
+              class="bg-gray-100 p-6 rounded-lg mb-8 text-left mx-auto"
+              style="max-width: 640px"
+            >
+              <p>So let’s take some numbers:</p>
+              <ul class="list-disc list-inside">
+                <li>
+                  How much revenue would it take for you to quit your job?
+                  Visualize that number, because it’s important.
+                </li>
+                <li>
+                  Now, how many clients does it take to reach that revenue goal?
+                  Let’s say it’s 5.
+                </li>
+                <li>
+                  Now, how many clients do you have to talk to to make a sale?
+                  Let’s say it’s 5. We’ll give ourselves a conservative 20%
+                  close rate.
+                </li>
+                <li>
+                  Now, how many prospects do we have to talk to in order to get
+                  5 people interested? From what I’ve seen, the number is 15.
+                </li>
+                <li>
+                  This means you need a predictable system that’s able to get us
+                  15 interested leads per month, minimum.
+                </li>
+                <li>
+                  And we want to do this while using the least amount of time &
+                  money possible.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Cold Outreach System -->
+            <div class="mb-8 text-left mx-auto" style="max-width: 640px">
+              <p>
+                And today, you’ll be getting access to the very system that’s
+                allowed us to do this.
+              </p>
+              <h3 class="font-bold">It’s called Cold Outreach.</h3>
+              <p>This system lets you:</p>
+              <ul class="list-disc list-inside">
+                <li>
+                  Generate Leads every day without spending any money on
+                  advertising
+                </li>
+                <li>
+                  Sell clients without needing to build complicated funnels &
+                  websites
+                </li>
+                <li>Make sales without posting content online</li>
+              </ul>
+              <p>At a high level glance, the system works like this:</p>
+              <ul class="list-disc list-inside">
+                <li>
+                  You find a business owner you want to sell your service to.
+                </li>
+                <li>You get their email address.</li>
+                <li>
+                  You write an outreach message to these business owners. 5-10%
+                  reply.
+                </li>
+                <li>
+                  You have a conversation with them. You get a client. Simple.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Clarification and Offer -->
+            <div class="mb-8 text-left mx-auto" style="max-width: 640px">
+              <p>Now, I want to make something very clear.</p>
+              <p>
+                These results are not typical. These are our students who have
+                paid us over $10,000 for direct help inside their business.
+              </p>
+              <p>
+                But I understand you might not have $10,000. After all, you just
+                met me.
+              </p>
+              <p>So what do you do? What I propose is a trade offer.</p>
+              <p>This meme will sum it up nicely:</p>
+              <img
+                src="path/to/your-meme-image.png"
+                alt="Trade Offer Meme"
+                class="mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- First Column: Call to Action -->
+          <div class="md:w-1/2 space-y-6">
+            <p>
+              Save 80-100 hours of time & thousands of dollars trying to find
+              your next freelancing client - plug and play our proven script
+              templates instead.
+            </p>
+            <p>
+              Never worry about where your next client is coming from again! Our
+              team will send you our proven “Plug and Play” scripts and make
+              sure you have the exact templates to get in touch with your next
+              client. The templates are ready to be copied + pasted into your
+              outreach messages so you don’t have to do any editing.
+            </p>
+            <a
+              href="#checkout"
+              class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors"
+            >
+              Get X Product
+            </a>
+            <img
+              src="path/to/your-image.jpg"
+              alt="Complementary Content"
+              class="w-full h-auto"
+            />
+          </div>
+
+          <!-- Second Column: Possible Testimonials or Additional Benefits -->
+          <div class="md:w-1/2 space-y-6">
+            <img
+              src="path/to/your-image.jpg"
+              alt="Complementary Content"
+              class="w-full h-auto"
+            />
+            <p>
+              Save 80-100 hours of time & thousands of dollars trying to find
+              your next freelancing client - plug and play our proven script
+              templates instead.
+            </p>
+            <p>
+              Never worry about where your next client is coming from again! Our
+              team will send you our proven “Plug and Play” scripts and make
+              sure you have the exact templates to get in touch with your next
+              client. The templates are ready to be copied + pasted into your
+              outreach messages so you don’t have to do any editing.
+            </p>
+            <a
+              href="#checkout"
+              class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors"
+            >
+              Get X Product
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container mx-auto px-4 py-8 text-center">
+        <h2 class="text-3xl font-bold mb-8">Your Large Title Here</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Each column block repeats for each item -->
+          <div>
+            <img
+              src="path/to/your-image1.jpg"
+              alt="Description"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Title 1</h3>
+            <p>Your description here.</p>
+          </div>
+          <div>
+            <img
+              src="path/to/your-image2.jpg"
+              alt="Description"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Title 2</h3>
+            <p>Your description here.</p>
+          </div>
+          <div>
+            <img
+              src="path/to/your-image3.jpg"
+              alt="Description"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Title 3</h3>
+            <p>Your description here.</p>
+          </div>
+          <div>
+            <img
+              src="path/to/your-image4.jpg"
+              alt="Description"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Title 4</h3>
+            <p>Your description here.</p>
+          </div>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="flex justify-center mt-8">
+          <a
+            href="#checkout"
+            class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors w-full text-center"
+          >
+            Get X Product
+          </a>
+        </div>
+      </section>
+
+      <section class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          Your Section Title Here
+        </h2>
+
+        <!-- Repeated item blocks for offerings -->
+        <div class="space-y-8">
+          <!-- Begin repeated item block -->
+          <div
+            class="bg-white border border-black rounded-lg overflow-hidden mb-6 md:flex"
+          >
+            <img
+              src="path/to/your-image.jpg"
+              alt="Ecom Scripts Pack"
+              class="w-full md:w-1/3 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold mb-2">
+                Ecom Scripts Pack: Get Ecommerce Clients for Any of These Offers
+              </h3>
+              <ul class="list-disc list-inside">
+                <li>Facebook Ads</li>
+                <li>TikTok Ads</li>
+                <li>Google Ads</li>
+                <li>SEO</li>
+                <li>Email Marketing</li>
+                <li>Web Design</li>
+                <li>TikTok Content/UGC</li>
+                <li>Conversion Rate Optimization</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Repeat the above block for each item, adjusting the content as necessary -->
+
+          <!-- Additional blocks here if needed -->
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="flex justify-center mt-8">
+          <a
+            href="#checkout"
+            class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors w-full text-center"
+          >
+            Get X Product
+          </a>
+        </div>
+      </section>
+
+      <section class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center mb-8">FAQ</h2>
+
+        <div class="max-w-2xl mx-auto mb-8 space-y-6">
+          <!-- FAQ 1 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              Do I need to have a business before using the scripts?
+            </h3>
+            <p>
+              Yes, you need an offer to sell. This is not a business opportunity
+              where we give you a service to sell. You must already know what
+              you're trying to sell clients. While we offer a free bonus of the
+              offers we know perform best, this is ideally suited for those
+              already running a business and clear about their offerings.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              What if I already do outreach?
+            </h3>
+            <p>
+              It's often significantly beneficial to have an expert write your
+              scripts. Unoptimized scripts can underperform, whereas expertly
+              crafted ones can improve your outreach messages' performance by
+              50%-200%.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              How many scripts will I get?
+            </h3>
+            <p>
+              Each script pack includes several scripts with A/B tests. Script
+              packs are tailored to specific niches, containing various scripts
+              for different services within those niches.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              What other fees are associated with this?
+            </h3>
+            <p>
+              Manual outreach and lead finding incur no additional costs.
+              High-volume automated outreach campaigns would cost approximately
+              $200 per month for automation tools as we will demonstrate.
+            </p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              Do you do the outreach for me?
+            </h3>
+            <p>
+              We do NOT conduct outreach for you. These products are scripts
+              only; your business is responsible for its outreach efforts.
+            </p>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              Can I get a Refund if the scripts don't work for me?
+            </h3>
+            <p>
+              We offer a 90 Day Guarantee. If after 3 months of sending these
+              outreach messages you haven't been able to book any calls, contact
+              us for a refund.
+            </p>
+          </div>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="flex justify-center mt-8">
+          <a
+            href="#checkout"
+            class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors w-full text-center"
+          >
+            Get X Product
+          </a>
+        </div>
+      </section>
+
+      <section class="container mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold">Don’t Take It From Us…</h2>
+          <p class="text-xl">See What Our Clients Have To Say:</p>
+          <p class="italic">*You are not guaranteed results like this*</p>
+        </div>
+
+        <!-- Photo Columns for Testimonials -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <!-- Column 1 Photos -->
+          <div>
+            <img
+              src="path/to/your-placeholder-image.jpg"
+              alt="Client Testimonial 1"
+              class="mb-4 w-full"
+            />
+            <img
+              src="path/to/your-placeholder-image.jpg"
+              alt="Client Testimonial 2"
+              class="mb-4 w-full"
+            />
+            <!-- Add more or adjust as needed -->
+          </div>
+          <!-- Column 2 Photos -->
+          <div>
+            <img
+              src="path/to/your-placeholder-image.jpg"
+              alt="Client Testimonial 3"
+              class="mb-4 w-full"
+            />
+            <img
+              src="path/to/your-placeholder-image.jpg"
+              alt="Client Testimonial 4"
+              class="mb-4 w-full"
+            />
+            <!-- Add more or adjust as needed -->
+          </div>
+        </div>
+
+        <!-- Closing Statement -->
+        <div class="text-center">
+          <h2 class="text-2xl font-bold mb-4">
+            There has never been a better time to sign clients!
+          </h2>
+          <p class="mb-4">Join the boat before it's too saturated.</p>
+          <!-- Call-to-Action Button -->
+          <div class="flex justify-center mt-8">
+            <a
+              href="#checkout"
+              class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors w-full text-center"
+            >
+              Get X Product
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center p-6">
+      <img
+        src="path/to/your-logo.png"
+        alt="Script Swipes Logo"
+        class="mx-auto mb-4"
+        style="width: 120px; height: auto"
+      />
+      <div class="pt-4">
+        <p class="text-sm mb-4" id="copyright">
+          Copyright Script Swipes © <span id="currentYear"></span> All Rights
+          Reserved
+        </p>
+        <a href="#privacy-policy" class="text-sm hover:text-blue-500"
+          >Privacy Policy</a
+        >
+        <span class="text-sm mx-2">||</span>
+        <a href="#terms-and-conditions" class="text-sm hover:text-blue-500"
+          >Terms and Conditions</a
+        >
+      </div>
+    </footer>
+
+    <!-- Dynamic Year -->
+    <script>
+      // Get the current year
+      const currentYear = new Date().getFullYear();
+
+      // Set the current year in the footer
+      document.getElementById("currentYear").textContent = currentYear;
+    </script>
+
+    <!-- Form -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      // Initialize Stripe.js with your publishable key
+      const stripe = Stripe(
+        "pk_test_51OQUOCDda5ktZLfTvfDPEwGNOSiyoKpFGXRzJ6bdbFx8PpR7GBmTgTdHW1xHYsxYq2ta7y0vHKZwcgzvlgDLsh6F00TDRRNGRQ"
+      );
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkoutForm = document.getElementById("checkout-form");
+        const cardElementContainer = document.getElementById("card-element");
+        const productCheckboxes = document.querySelectorAll(
+          'input[name="product"]'
+        );
+        let totalAmount = 1000; // Start with the base price of $10 represented in cents
+
+        // Function to calculate total amount based on selected products
+        function calculateTotal() {
+          totalAmount = 1000; // Reset to base price
+          productCheckboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+              totalAmount += parseInt(checkbox.value, 10);
+            }
+          });
+        }
+
+        // Function to transition from step 1 to step 2 and create PaymentIntent
+        async function goToStep2() {
+          calculateTotal();
+          // Hide step 1 and show step 2
+          document.getElementById("step1").style.display = "none";
+          document.getElementById("step2").style.display = "block";
+
+          // Create PaymentIntent on the server
+          const response = await fetch(
+            "/.netlify/functions/create-payment-intent",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ amount: totalAmount }),
+            }
+          );
+          const data = await response.json();
+
+          // Initialize Stripe Elements for card payment
+          const elements = stripe.elements();
+          const card = elements.create("card");
+          card.mount("#card-element");
+
+          // Confirm the card payment on form submission
+          checkoutForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const result = await stripe.confirmCardPayment(data.clientSecret, {
+              payment_method: {
+                card: card,
+                billing_details: {
+                  name: document.getElementById("full-name").value,
+                  email: document.getElementById("email").value,
+                  phone: document.getElementById("phone").value,
+                },
+              },
+            });
+
+            if (result.error) {
+              // Display error message to the customer
+              console.log(result.error.message);
+            } else {
+              // The payment has been processed!
+              if (result.paymentIntent.status === "succeeded") {
+                console.log("Payment succeeded!");
+              }
+            }
+          });
+        }
+
+        // Update the total whenever a product checkbox is changed
+        productCheckboxes.forEach((checkbox) => {
+          checkbox.addEventListener("change", calculateTotal);
+        });
+
+        // Bind the goToStep2 function to the continue button
+        document
+          .getElementById("continue-button")
+          .addEventListener("click", goToStep2);
+      });
+    </script>
+  </body>
+</html>
