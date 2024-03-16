@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>[Product Name] - Best Performing</title>
     <link href="./output.css" rel="stylesheet" />
+    <style>
+      .hidden {
+        display: none;
+      }
+      .flex {
+        display: flex;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      /* Additional styling as needed */
+    </style>
   </head>
   <body class="bg-gray-100 font-sans">
     <main class="p-4 mx-auto max-w-6xl">
@@ -12,181 +30,94 @@
         <img
           src="path/to/your-logo.png"
           alt="Script Swipes Logo"
-          class="mr-4"
           style="width: 120px; height: auto"
         />
       </header>
 
       <section class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row gap-8">
-          <div class="md:w-1/2 flex flex-col items-center text-center">
-            <h1 class="text-center text-3xl font-bold mt-8 mb-8">
-              Sign Your Next Client With These Proven Cold
-            </h1>
-            <video controls class="w-full">
-              <source src="path/to/your-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <p class="mt-4">Order Now And You'll Receive:</p>
-            <ul class="text-left">
-              <li>
-                5 Step "Plug and Play" Outreach Templates So You Can Sign Your
-                Next Client Guaranteed (Or Your Money Back)
-              </li>
-              <li>
-                A/B Tests Written By Our Experts So You Can Improve Response
-                Rates from Prospects
-              </li>
-              <li>
-                Personalized Openers That Make Every Message Look Individually
-                Personalized
-              </li>
-              <li>
-                Cold Email Tech Stack Guide So You Can Send Thousands of Cold
-                Emails Automatically Every Month (Without Breaking the Law or
-                Spamming)
-              </li>
-              <li>
-                Direct Access to Our Team So We Can Give You Feedback on Your
-                Scripts & Responses
-              </li>
-              <li>
-                BONUS 1: 7 Figure Rev Ops Course: How to Create Offers That 100%
-                Cold Prospects Actually Buy & Pay High Ticket Prices For
-                (Previously Only Available in Our $10k Coaching Program)
-              </li>
-            </ul>
-            <p class="font-bold mt-4 text-4xl text-green-500">Only $20</p>
-            <p class="mt-4 text-1xl">One time payment</p>
-          </div>
-
-          <div class="md:w-1/2 flex flex-col items-center">
-            <img
-              src="path/to/your-gold-medal-image.png"
-              alt="90 Day Money Back Guarantee"
-              class="w-1/2 mx-auto"
-            />
-            <p class="mt-4">
-              You can order multiple scripts at the same time, check the ones
-              you want so you can have a selection of scripts to pick from.
-            </p>
-            <!-- Form inputs and submit button here -->
-            <form
-              id="checkout-form"
-              class="mt-4 w-full max-w-xs bg-white p-5 border border-slate-300 rounded-lg"
-              action="/charge"
-              method="post"
+        <form id="checkout-form">
+          <div id="step1">
+            <h2 class="text-lg font-semibold mb-4">
+              Step 1: Contact Information
+            </h2>
+            <!-- Contact Information Fields -->
+            <div class="mb-4">
+              <label
+                for="full-name"
+                class="block text-sm font-medium text-gray-700"
+                >Full Name *</label
+              >
+              <input
+                type="text"
+                id="full-name"
+                name="full_name"
+                required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-medium text-gray-700"
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="phone" class="block text-sm font-medium text-gray-700"
+                >Phone Number *</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+              />
+            </div>
+            <button
+              type="button"
+              id="to-step-2"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
-              <!-- Contact Information -->
-              <div id="step1">
-                <!-- Mandatory Field Notice -->
-                <p class="text-blue-500 text-xs font-bold mt-4 mb-4">
-                  * Denotes Mandatory
-                </p>
-
-                <!-- Full Name Field -->
-                <div class="mb-4">
-                  <label
-                    for="full-name"
-                    class="block text-sm font-medium text-gray-700"
-                    >Full Name *</label
-                  >
-                  <input
-                    type="text"
-                    id="full-name"
-                    name="full_name"
-                    required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-                  />
-                </div>
-
-                <!-- Email Field -->
-                <div class="mb-4">
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700"
-                    >Email *</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-                  />
-                </div>
-
-                <!-- Phone Number Field -->
-                <div class="mb-4">
-                  <label
-                    for="phone"
-                    class="block text-sm font-medium text-gray-700"
-                    >Phone Number *</label
-                  >
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-                  />
-                </div>
-
-                <!-- Product Selection Checkboxes -->
-                <div class="mb-4">
-                  <label class="block text-sm font-medium text-gray-700"
-                    >Choose Your Script Packs *</label
-                  >
-                  <div class="mt-2">
-                    <!-- Checkbox for Product 1 -->
-                    <label class="inline-flex items-center">
-                      <input
-                        type="checkbox"
-                        name="product"
-                        value="product1"
-                        class="form-checkbox"
-                      />
-                      <span class="ml-2">Product 1 ($10)</span>
-                    </label>
-                    <!-- Repeat for other products -->
-                  </div>
-                </div>
-
-                <!-- Agreement Notice and Continue Button -->
-                <button
-                  id="continue-button"
-                  type="button"
-                  onclick="goToStep(2)"
-                  class="bg-blue-500 py-2 px-4 rounded-md hover:bg-blue-700 transition-colors w-full"
-                >
-                  <p class="text-white font-bold">Continue to Payment</p>
-                </button>
-                <p class="text-white text-sm text-center">
-                  By submitting the form you agree to receive emails and texts
-                  about this offer, you can unsubscribe at any time.
-                </p>
-                <p class="text-xs text-center mt-2">
-                  We Respect Your Privacy & Information
-                </p>
-              </div>
-
-              <!-- Step 2: Payment Information -->
-              <div id="step2" class="hidden">
-                <div id="card-element" class="mb-4">
-                  <!-- Stripe Elements will go here -->
-                </div>
-
-                <!-- Submit Button for Payment -->
-                <button
-                  type="submit"
-                  class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors w-full"
-                >
-                  Pay Now
-                </button>
-              </div>
-            </form>
+              Continue to Payment
+            </button>
           </div>
-        </div>
+
+          <div id="step2" class="hidden">
+            <button
+              type="button"
+              id="back-to-step-1"
+              class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Back
+            </button>
+            <h2 class="text-lg font-semibold mb-4">
+              Step 2: Product Selection and Payment
+            </h2>
+            <div id="product-selection" class="mb-4">
+              <!-- Dynamically populated products -->
+            </div>
+            <div id="payment-element" class="mb-4">
+              <!-- Stripe Elements will be injected here -->
+            </div>
+            <div id="order-bumps" class="mb-4">
+              <!-- Dynamically populated order bumps -->
+            </div>
+            <div id="payment-messages" class="mb-4"></div>
+            <div id="total-amount" class="mb-4"></div>
+            <button
+              type="submit"
+              class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Complete Order
+            </button>
+          </div>
+        </form>
       </section>
     </main>
 
@@ -194,11 +125,10 @@
       <img
         src="path/to/your-logo.png"
         alt="Script Swipes Logo"
-        class="mx-auto mb-4"
         style="width: 120px; height: auto"
       />
       <div class="pt-4">
-        <p class="text-sm mb-4" id="copyright">
+        <p class="text-sm mb-4">
           Copyright Script Swipes © <span id="currentYear"></span> All Rights
           Reserved
         </p>
@@ -212,98 +142,106 @@
       </div>
     </footer>
 
-    <!-- Dynamic Year -->
-    <script>
-      const currentYear = new Date().getFullYear();
-      document.getElementById("currentYear").textContent = currentYear;
-    </script>
-
-    <!-- Form -->
     <script src="https://js.stripe.com/v3/"></script>
     <script>
-      // Initialize Stripe.js with your publishable key
-      const stripe = Stripe(
-        "pk_test_51OQUOCDda5ktZLfTvfDPEwGNOSiyoKpFGXRzJ6bdbFx8PpR7GBmTgTdHW1xHYsxYq2ta7y0vHKZwcgzvlgDLsh6F00TDRRNGRQ"
-      );
-
       document.addEventListener("DOMContentLoaded", function () {
+        const stripe = Stripe("YOUR_STRIPE_PUBLIC_KEY"); // Replace with your actual Stripe public key
+        const elements = stripe.elements();
         const checkoutForm = document.getElementById("checkout-form");
-        const cardElementContainer = document.getElementById("card-element");
-        const productCheckboxes = document.querySelectorAll(
-          'input[name="product"]'
-        );
-        let totalAmount = 1000; // Start with the base price of $10 represented in cents
+        const toStep2Button = document.getElementById("to-step-2");
+        const backToStep1Button = document.getElementById("back-to-step-1");
+        const productSelection = document.getElementById("product-selection");
+        const orderBumps = document.getElementById("order-bumps");
+        const totalAmountDisplay = document.getElementById("total-amount");
+        let totalAmount = 0;
 
-        // Function to calculate total amount based on selected products
-        function calculateTotal() {
-          totalAmount = 1000; // Reset to base price
-          productCheckboxes.forEach((checkbox) => {
-            if (checkbox.checked) {
-              totalAmount += parseInt(checkbox.value, 10);
-            }
+        // Products and Order Bumps Setup
+        const products = [
+          { id: "product1", name: "Product 1", price: 1000 },
+          { id: "product2", name: "Product 2", price: 2000 },
+          { id: "product3", name: "Product 3", price: 1500 },
+          { id: "product4", name: "Product 4", price: 1200 },
+          { id: "product5", name: "Product 5", price: 1800 },
+        ];
+
+        const bumps = [
+          { id: "bump1", name: "Order Bump 1", price: 500 },
+          { id: "bump2", name: "Order Bump 2", price: 800 },
+        ];
+
+        // Function to display products and order bumps with checkboxes
+        function displayItems(container, items) {
+          items.forEach((item) => {
+            const itemLabel = document.createElement("label");
+            itemLabel.htmlFor = item.id;
+            itemLabel.textContent = `${item.name} - $${item.price / 100}`;
+            container.appendChild(itemLabel);
+
+            const itemCheckbox = document.createElement("input");
+            itemCheckbox.type = "checkbox";
+            itemCheckbox.id = item.id;
+            itemCheckbox.value = item.price;
+            itemCheckbox.addEventListener("change", updateTotal);
+            container.appendChild(itemCheckbox);
+
+            container.appendChild(document.createElement("br"));
           });
         }
 
-        // Function to transition from step 1 to step 2 and create PaymentIntent
-        async function goToStep2() {
-          calculateTotal();
-          // Hide step 1 and show step 2
-          document.getElementById("step1").style.display = "none";
-          document.getElementById("step2").style.display = "block";
+        displayItems(productSelection, products);
+        displayItems(orderBumps, bumps);
 
-          // Create PaymentIntent on the server
-          const response = await fetch(
-            "/.netlify/functions/create-payment-intent",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ amount: totalAmount }),
-            }
+        // Function to update and display the total amount
+        function updateTotal() {
+          const selectedItems = document.querySelectorAll(
+            '#product-selection input[type="checkbox"]:checked, #order-bumps input[type="checkbox"]:checked'
           );
-          const data = await response.json();
-
-          // Initialize Stripe Elements for card payment
-          const elements = stripe.elements();
-          const card = elements.create("card");
-          card.mount("#card-element");
-
-          // Confirm the card payment on form submission
-          checkoutForm.addEventListener("submit", async function (e) {
-            e.preventDefault();
-            const result = await stripe.confirmCardPayment(data.clientSecret, {
-              payment_method: {
-                card: card,
-                billing_details: {
-                  name: document.getElementById("full-name").value,
-                  email: document.getElementById("email").value,
-                  phone: document.getElementById("phone").value,
-                },
-              },
-            });
-
-            if (result.error) {
-              // Display error message to the customer
-              console.log(result.error.message);
-            } else {
-              // The payment has been processed!
-              if (result.paymentIntent.status === "succeeded") {
-                console.log("Payment succeeded!");
-              }
-            }
-          });
+          totalAmount = Array.from(selectedItems).reduce(
+            (acc, item) => acc + parseInt(item.value),
+            0
+          );
+          totalAmountDisplay.textContent = `Total: $${totalAmount / 100}`;
         }
 
-        // Update the total whenever a product checkbox is changed
-        productCheckboxes.forEach((checkbox) => {
-          checkbox.addEventListener("change", calculateTotal);
+        toStep2Button.addEventListener("click", function () {
+          document.getElementById("step1").classList.add("hidden");
+          document.getElementById("step2").classList.remove("hidden");
+          updateTotal(); // Update total when moving to step 2
         });
 
-        // Bind the goToStep2 function to the continue button
-        document
-          .getElementById("continue-button")
-          .addEventListener("click", goToStep2);
+        backToStep1Button.addEventListener("click", function () {
+          document.getElementById("step1").classList.remove("hidden");
+          document.getElementById("step2").classList.add("hidden");
+        });
+
+        // Stripe Elements for Card Details
+        const card = elements.create("card");
+        card.mount("#payment-element");
+
+        checkoutForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          fetch("/.netlify/functions/create-payment-intent", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ amount: totalAmount }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              return stripe.confirmCardPayment(data.clientSecret, {
+                payment_method: { card: card },
+              });
+            })
+            .then((result) => {
+              if (result.error) {
+                alert(result.error.message); // or update DOM with the message
+              } else {
+                alert("Payment successful!"); // or update DOM accordingly
+              }
+            });
+        });
       });
     </script>
   </body>
