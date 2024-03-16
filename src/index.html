@@ -238,9 +238,10 @@
             })
             .then((result) => {
               if (result.error) {
-                alert(result.error.message); // or update DOM with the message
+                alert(result.error.message); // Handle the error accordingly
               } else {
-                alert("Payment successful!"); // or update DOM accordingly
+                // Redirect here instead of showing an alert
+                window.location.href = "thankyou.html"; // Replace with the URL of your success page
               }
             });
         });
